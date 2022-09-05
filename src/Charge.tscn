@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Charge.gd" type="Script" id=1]
+
+[node name="Charge" type="Control"]
+script = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_bottom = 0.5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 143.0
+margin_bottom = 104.0
+
+[node name="die1" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_right = 143.0
+margin_bottom = 14.0
+text = "0"
+align = 1
+
+[node name="die2" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 143.0
+margin_bottom = 32.0
+text = "0"
+align = 1
+
+[node name="Charge" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 143.0
+margin_bottom = 56.0
+text = "Charge"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 60.0
+margin_right = 143.0
+margin_bottom = 80.0
+alignment = 1
+
+[node name="Combine" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 69.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Combine"
+
+[node name="Split" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 73.0
+margin_right = 143.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 70, 0 )
+size_flags_horizontal = 3
+text = "Split"
+
+[node name="EndTurn" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_top = 84.0
+margin_right = 143.0
+margin_bottom = 104.0
+text = "End Turn"

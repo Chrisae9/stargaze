@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://src/cards/details/details.gd" type="Script" id=1]
+[ext_resource path="res://src/effects/simple/zap_effect.tres" type="Resource" id=2]
+
+[resource]
+script = ExtResource( 1 )
+card_name = "Zap"
+description = "Deal 6 damage."
+cost = 4
+durability = 15
+types = [ 0 ]
+rarity = 0
+effects = [ ExtResource( 2 ) ]
+suitable_slots = [ true, true, true, true, true, true ]

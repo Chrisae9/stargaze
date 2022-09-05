@@ -1,0 +1,64 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Effect",
+"class": "Attack",
+"language": "GDScript",
+"path": "res://src/effects/simple/attack.gd"
+}, {
+"base": "Resource",
+"class": "Effect",
+"language": "GDScript",
+"path": "res://src/effects/effect.gd"
+}, {
+"base": "Effect",
+"class": "Shield",
+"language": "GDScript",
+"path": "res://src/effects/simple/shield.gd"
+}, {
+"base": "Resource",
+"class": "card_details",
+"language": "GDScript",
+"path": "res://src/cards/details/details.gd"
+}, {
+"base": "Resource",
+"class": "move_details",
+"language": "GDScript",
+"path": "res://src/moves/details/details.gd"
+} ]
+_global_script_class_icons={
+"Attack": "",
+"Effect": "",
+"Shield": "",
+"card_details": "",
+"move_details": ""
+}
+
+[application]
+
+config/name="stargaze"
+run/main_scene="res://src/Battle.tscn"
+
+[autoload]
+
+Global="*res://src/Global.gd"
+
+[display]
+
+window/size/resizable=false
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"

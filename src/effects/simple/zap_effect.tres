@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/effects/simple/attack.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+effect_name = "Zap"
+duration = 1
+priority = 3
+resolve = 4
+damage = 6

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://src/cards/details/details.gd" type="Script" id=1]
+[ext_resource path="res://src/effects/simple/bubble_effect.tres" type="Resource" id=2]
+
+[resource]
+script = ExtResource( 1 )
+card_name = "Bubble"
+description = "Gain 5 block."
+cost = 3
+durability = 15
+types = [ 1 ]
+rarity = 0
+effects = [ ExtResource( 2 ) ]
+suitable_slots = [ true, true, true, true, true, true ]
