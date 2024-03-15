@@ -1,0 +1,67 @@
+I no longer like the idea of making a game where an enemy needs to be directly fought. The concept very overused and it doesn't grab peoples attention. 
+
+The thing that makes balatro unique is that is takes poker and expands it into the deck building genre. 
+
+The concept works because there is a heavy amount of randomness in poker allowing for the player to "cheat" or build a deck.
+
+My original thought is take spacebase and turn it into a rougelike, realistically I am not going to find a similar game to poker that everyone loves and be able to make a spinoff. 
+
+The hard part is making it into a deckbuilder, the randomness of spacebase comes from the dice roll, but that's about it. Ideally I would be able to apply some randomness to the slots but the player needs to have some sort of engine and that could be difficult to pull off. 
+
+So I am going to start small, come up with a simple gameplay loop, think one round or balatro and see if it is fun. Add modifiers, challenges, different dice, and see if I enjoy it.
+
+Then I can build around that...
+
+Here are some basic ideas:
+
+
+plot:
+- you need resources from comets and if you fail to break them then you wont get the stuff you need to continue run
+
+- there is a ship you fly, roll a certain amount of dice to meet a charge to destroy a comet and get scrap
+- use scrap to craft random stuff and build your deckbuilding engine
+
+dice:
+- can combine or split roll
+- number of dice
+- sides of dice (d1, d20)
+- value of each side 
+- a value beyond a total of 6 would cause the dice to do a wheel of fortune effect around the slots, each time it goes around it adds multiples
+
+slots:
+- hold abilites, gives charge, multiplier, scrap, or items from shop
+
+comet:
+
+- base charge needs to be met to destroy a chunk
+- each chunk can be destroyed in one go
+
+weather:
+- debuff effects based on area
+
+levels:
+- FTL jump to different areas
+
+Abilities:
+Active and passive ability
+to get passive ability you need to buy another ability for that slot
+
+scrap:
+- can be used to buy stuff
+
+Shop:
+These could be individual sales or packs
+- Dice
+    - Dice sides
+    - Dice modifiers 
+- Slots
+    - slot modifiers
+- Abilities
+    - ability modifiers
+    - charge, overclock, scrap
+- Background effects
+spaceflation - stuff gets more expensive as run goes on
+
+
+
+create a dice.lua, hard code 2 dice each with 3 sides, the dice should be centered on the left half of the screen, not interfering with the slots. Since the game is 2d a hover over the dice should display information about the dice (for now just the values of each dice side). There should be a click button to roll the dice centered right above the slots and  two buttons next to it, split and combine, these buttons should be greyed out until the dice roll is complete. once the dice roll is complete, the dice should display the number that was rolled, the roll option should become greyed out, and the combine and split option should become available. On hover over the split and combine button, the corresponding slots should highlight to signify a selection of slots, for example a roll of 1 and 2, split should highlight slots 1 and 2, combine should highlight slot 3. Once the selection is made, state should reset back to normal with the roll button available, the split and combine button greyed out, and slots unhighlighted.
