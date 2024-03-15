@@ -70,14 +70,17 @@ offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="ActionHolder"]
+[node name="Roll" type="Button" parent="ActionHolder"]
 custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
+text = "Roll"
 
-[node name="Button2" type="Button" parent="ActionHolder"]
+[node name="Split" type="Button" parent="ActionHolder"]
 custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
+text = "Split"
 
-[node name="Button3" type="Button" parent="ActionHolder"]
+[node name="Combine" type="Button" parent="ActionHolder"]
 custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
+text = "Combine"
