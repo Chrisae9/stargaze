@@ -1,11 +1,5 @@
 res://Slot.tscn
-res://Loop.gd
 res://Loop.tscn
 res://Die.tscn
 res://Comet.tscn
-res://Comet.gd
 res://DiceHolder.tscn
-res://DiceHolder.gd
-res://Die.gd
-res://GameState.gd
-res://SlotHolder.gd

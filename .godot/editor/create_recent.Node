@@ -1,8 +1,9 @@
-Control
-Container
 ColorRect
 Label
+VBoxContainer
+Control
+BoxContainer
+HBoxContainer
+Container
 CenterContainer
 Button
-VBoxContainer
-HBoxContainer

@@ -6,7 +6,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1180.0
+offset_right = -1130.0
 offset_bottom = -650.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -20,9 +20,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 0.203922, 0.321569, 1)
+color = Color(0.592157, 0.552941, 0.564706, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Abilities" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,31 +30,218 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AbilityBox" type="Control" parent="VBoxContainer"]
+[node name="SecondaryAbility" type="Control" parent="Abilities"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/AbilityBox"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Abilities/SecondaryAbility"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.207843, 0.207843, 0.207843, 1)
 
-[node name="Label" type="Label" parent="VBoxContainer/AbilityBox"]
+[node name="Charge" type="Control" parent="Abilities/SecondaryAbility/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="Abilities/SecondaryAbility/HBoxContainer/Charge"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.207843, 1, 1)
+
+[node name="Label" type="Label" parent="Abilities/SecondaryAbility/HBoxContainer/Charge"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -16.5
+offset_left = -9.5
 offset_top = -11.5
-offset_right = 16.5
+offset_right = 9.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Ability
-"
+text = "50"
+
+[node name="Overclock" type="Control" parent="Abilities/SecondaryAbility/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="Abilities/SecondaryAbility/HBoxContainer/Overclock"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.682353, 0, 0.364706, 1)
+
+[node name="Label" type="Label" parent="Abilities/SecondaryAbility/HBoxContainer/Overclock"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.5
+offset_top = -11.5
+offset_right = 9.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+
+[node name="Scrap" type="Control" parent="Abilities/SecondaryAbility/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="Abilities/SecondaryAbility/HBoxContainer/Scrap"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.188235, 0.188235, 0.188235, 1)
+
+[node name="Label" type="Label" parent="Abilities/SecondaryAbility/HBoxContainer/Scrap"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.5
+offset_top = -11.5
+offset_right = 9.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+
+[node name="PrimaryAbility" type="Control" parent="Abilities"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Abilities/PrimaryAbility"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Abilities/PrimaryAbility"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Charge" type="Control" parent="Abilities/PrimaryAbility/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="Abilities/PrimaryAbility/HBoxContainer/Charge"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.207843, 1, 1)
+
+[node name="Label" type="Label" parent="Abilities/PrimaryAbility/HBoxContainer/Charge"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.5
+offset_top = -11.5
+offset_right = 9.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "50"
+
+[node name="Overclock" type="Control" parent="Abilities/PrimaryAbility/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="Abilities/PrimaryAbility/HBoxContainer/Overclock"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.682353, 0, 0.364706, 1)
+
+[node name="Label" type="Label" parent="Abilities/PrimaryAbility/HBoxContainer/Overclock"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.5
+offset_top = -11.5
+offset_right = 9.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+
+[node name="Scrap" type="Control" parent="Abilities/PrimaryAbility/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="Abilities/PrimaryAbility/HBoxContainer/Scrap"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.188235, 0.188235, 0.188235, 1)
+
+[node name="Label" type="Label" parent="Abilities/PrimaryAbility/HBoxContainer/Scrap"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.5
+offset_top = -11.5
+offset_right = 9.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+
+[node name="SlotNumber" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 2.0
+offset_right = 5.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "1"
