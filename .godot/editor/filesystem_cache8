@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1710523284
+::res://::1710523628
 Comet.gd::GDScript::-1::1710464068::0::1::::<>VBoxContainer<>::
 Comet.tscn::PackedScene::1423336225900106589::1710464068::0::1::::<><>::res://Comet.gd
 DiceHolder.gd::GDScript::-1::1710464068::0::1::::<>GridContainer<>::
@@ -9,8 +9,8 @@ Die.tscn::PackedScene::4116605759904161702::1710464068::0::1::::<><>::res://Die.
 GameState.gd::GDScript::-1::1710464068::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::123127468225820751::1710464068::1710464158::1::::<><>::
 Loop.gd::GDScript::-1::1710464068::0::1::::<>Control<>::
-Loop.tscn::PackedScene::8723675035932697971::1710464842::0::1::::<><>::res://Loop.gd<>res://SlotHolder.gd<>res://DiceHolder.gd<>res://Comet.gd
-Slot.tscn::PackedScene::2702239422031001893::1710464068::0::1::::<><>::
+Loop.tscn::PackedScene::8723675035932697971::1710523334::0::1::::<><>::res://Loop.gd<>res://SlotHolder.gd<>res://DiceHolder.gd<>res://Comet.gd
+Slot.tscn::PackedScene::2702239422031001893::1710523334::0::1::::<><>::
 SlotHolder.gd::GDScript::-1::1710464068::0::1::::<>HBoxContainer<>::
 ::res://addons/::1710522949
 ::res://addons/godot-git-plugin/::1702863348
@@ -19,4 +19,4 @@ plugin.cfg::TextFile::-1::1702863348::0::1::::<><>::
 THIRDPARTY.md::TextFile::-1::1702863348::0::1::::<><>::
 ::res://addons/godot-git-plugin/linux/::1702863348
 ::res://addons/godot-git-plugin/macos/::1702863348
-::res://addons/godot-git-plugin/win64/::1710523282
+::res://addons/godot-git-plugin/win64/::1710523625
