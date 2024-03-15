@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw3a11e5jbpsm"]
+
+[ext_resource type="Script" path="res://DiceHolder.gd" id="1_53i7b"]
+
+[node name="GridContainer" type="GridContainer"]
+custom_minimum_size = Vector2(500, 300)
+offset_right = 500.0
+offset_bottom = 300.0
+tooltip_text = "test"
+columns = 10
+script = ExtResource("1_53i7b")

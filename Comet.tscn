@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ujqe0qk3qlm0"]
+
+[ext_resource type="Script" path="res://Comet.gd" id="1_jxv13"]
+
+[node name="VBoxContainer" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jxv13")

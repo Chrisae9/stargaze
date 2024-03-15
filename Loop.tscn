@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwj2whhghms0j"]
+
+[ext_resource type="Script" path="res://Loop.gd" id="1_m8o0i"]
+[ext_resource type="Script" path="res://SlotHolder.gd" id="2_uare1"]
+[ext_resource type="Script" path="res://DiceHolder.gd" id="3_o75si"]
+[ext_resource type="Script" path="res://Comet.gd" id="4_fkwmr"]
+
+[node name="Loop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m8o0i")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.141176, 0.141176, 1)
+
+[node name="SlotHolder" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 532.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+script = ExtResource("2_uare1")
+
+[node name="DiceHolder" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 200.0
+offset_right = 600.0
+offset_bottom = 500.0
+tooltip_text = "test"
+columns = 10
+script = ExtResource("3_o75si")
+
+[node name="Comet" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 700.0
+offset_top = 200.0
+offset_right = -80.0
+offset_bottom = -300.0
+script = ExtResource("4_fkwmr")

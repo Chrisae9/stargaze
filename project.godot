@@ -6,59 +6,27 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
-
-_global_script_classes=[ {
-"base": "Effect",
-"class": "Attack",
-"language": "GDScript",
-"path": "res://src/effects/simple/attack.gd"
-}, {
-"base": "Resource",
-"class": "Effect",
-"language": "GDScript",
-"path": "res://src/effects/effect.gd"
-}, {
-"base": "Effect",
-"class": "Shield",
-"language": "GDScript",
-"path": "res://src/effects/simple/shield.gd"
-}, {
-"base": "Resource",
-"class": "card_details",
-"language": "GDScript",
-"path": "res://src/cards/details/details.gd"
-}, {
-"base": "Resource",
-"class": "move_details",
-"language": "GDScript",
-"path": "res://src/moves/details/details.gd"
-} ]
-_global_script_class_icons={
-"Attack": "",
-"Effect": "",
-"Shield": "",
-"card_details": "",
-"move_details": ""
-}
+config_version=5
 
 [application]
 
 config/name="stargaze"
-run/main_scene="res://src/Battle.tscn"
+run/main_scene="res://Loop.tscn"
+config/features=PackedStringArray("4.2", "GL Compatibility")
+config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://src/Global.gd"
+GameState="*res://GameState.gd"
 
 [display]
 
-window/size/resizable=false
-
-[physics]
-
-common/enable_pause_aware_picking=true
+window/size/viewport_width=1280
+window/size/viewport_height=800
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
