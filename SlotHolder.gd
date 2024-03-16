@@ -6,7 +6,7 @@ func _ready():
 	var slot_scene = preload("res://Slot.tscn")
 	for i in range(GameState.slots.size()):
 		var slot = slot_scene.instantiate()
-		#slot.get_node()
+		slot.get_node("SlotNumber").text = str(i + 1)
 		add_child(slot)
 
 

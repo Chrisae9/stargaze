@@ -124,7 +124,7 @@ offset_right = 9.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "1"
+text = "25"
 
 [node name="PrimaryAbility" type="Control" parent="Abilities"]
 layout_mode = 2
@@ -228,7 +228,7 @@ offset_right = 9.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "1"
+text = "25"
 
 [node name="SlotNumber" type="Label" parent="."]
 layout_mode = 1
