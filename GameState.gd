@@ -14,12 +14,12 @@ var comet = {
 
 # Slots setup: Assuming a basic structure, further details depend on game mechanics.
 var slots = [
-	{'id': 1, 'ability': 1},
-	{'id': 2, 'ability': 2},
-	{'id': 3, 'ability': 3},
-	{'id': 4, 'ability': 4},
-	{'id': 5, 'ability': 5},
-	{'id': 6, 'ability': 6}
+	{'id': 1, 'primary_ability': 1, 'secondary_abilities': [7, 8]},
+	{'id': 2, 'primary_ability': 2, 'secondary_abilities': [8, 9]},
+	{'id': 3, 'primary_ability': 3, 'secondary_abilities': [9, 10]},
+	{'id': 4, 'primary_ability': 4, 'secondary_abilities': [10, 11]},
+	{'id': 5, 'primary_ability': 5, 'secondary_abilities': [11, 12]},
+	{'id': 6, 'primary_ability': 6, 'secondary_abilities': [12, 13]}
 ]
 
 var abilities = [

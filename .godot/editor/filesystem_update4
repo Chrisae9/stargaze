@@ -3,5 +3,6 @@ res://Loop.tscn
 res://Die.tscn
 res://Comet.tscn
 res://DiceHolder.tscn
-res://SlotHolder.gd
+res://Ability.tscn
 res://GameState.gd
+res://SlotHolder.gd
