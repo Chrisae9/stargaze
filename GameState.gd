@@ -43,6 +43,31 @@ var abilities = [
 	{'name': 'Galaxy Guard', 'active': [75, 3, 50], 'passive': [70, 2, 45]}
 ]
 
+
+enum States {
+	INIT, # Initialization before the game starts, loading resources, setting up the game world.
+	START, # The beginning of the game after initialization.
+	DICE_SELECT, # Player selects which dice to use.
+	ROLL, # The action of rolling the dice.
+	SPLIT_OR_COMBINE, # Decide whether to split or combine dice results.
+	CALC_CHARGE, # Calculate the charge based on dice outcomes.
+	CALC_OVERCLOCK, # Calculate the overclock value.
+	CALC_SCRAP, # Calculate the scrap collected.
+	CALC_MODIFIER, # Apply any modifiers to the calculations.
+	CHUNK_SELECT, # Selecting chunks of resources or targets.
+	TOTAL, # Summarize total gains/losses for the turn or action.
+	DESTROY, # Handle the destruction of chunks or entities.
+	RESET, # Reset the state for a new round or action.
+	INVENTORY, # Managing inventory or equipment.
+	SETTINGS, # Adjusting game settings or preferences.
+	PAUSE, # Game is paused.
+	VICTORY, # Condition for winning the game.
+	LOSS, # Condition for losing the game.
+	END # Concluding the game session.
+}
+
+var current_state = States.ROLL
+
 func _ready():
 	randomize()  # Ensure random results are different each run
 

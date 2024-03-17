@@ -5,4 +5,4 @@ res://Comet.tscn
 res://DiceHolder.tscn
 res://Ability.tscn
 res://GameState.gd
-res://SlotHolder.gd
+res://ActionHolder.gd

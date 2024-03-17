@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwj2whhghms0j"]
+[gd_scene load_steps=6 format=3 uid="uid://dwj2whhghms0j"]
 
 [ext_resource type="Script" path="res://Loop.gd" id="1_m8o0i"]
 [ext_resource type="Script" path="res://SlotHolder.gd" id="2_uare1"]
 [ext_resource type="Script" path="res://DiceHolder.gd" id="3_o75si"]
 [ext_resource type="Script" path="res://Comet.gd" id="4_fkwmr"]
+[ext_resource type="Script" path="res://ActionHolder.gd" id="5_gbf6f"]
 
 [node name="Loop" type="Control"]
 layout_mode = 3
@@ -69,6 +70,7 @@ offset_right = 229.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("5_gbf6f")
 
 [node name="Split" type="Button" parent="ActionHolder"]
 custom_minimum_size = Vector2(150, 100)

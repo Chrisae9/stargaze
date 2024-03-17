@@ -40,6 +40,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "50"
+horizontal_alignment = 1
 
 [node name="Overclock" type="Control" parent="HBoxContainer"]
 layout_mode = 2
@@ -68,6 +69,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "1"
+horizontal_alignment = 1
 
 [node name="Scrap" type="Control" parent="HBoxContainer"]
 layout_mode = 2
@@ -96,3 +98,4 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "1"
+horizontal_alignment = 1
