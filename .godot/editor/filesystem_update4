@@ -5,4 +5,9 @@ res://Comet.tscn
 res://DiceHolder.tscn
 res://Ability.tscn
 res://GameState.gd
+res://SlotHolder.gd
+res://GameLogic.gd
 res://ActionHolder.gd
+res://Loop.gd
+res://Die.gd
+res://DiceHolder.gd

@@ -1,9 +1,9 @@
-ColorRect
+Button
 Label
+ColorRect
 VBoxContainer
 Control
 BoxContainer
 HBoxContainer
 Container
 CenterContainer
-Button

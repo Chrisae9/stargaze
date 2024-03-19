@@ -1,11 +1,56 @@
 # GameState.gd
 extends Node
 
+#var seed = null
+var seed_num = 2667839505
+
+enum States {
+	INIT, # Initialization before the game starts, loading resources, setting up the game world.
+	START, # The beginning of the game after initialization.
+	DICE_SELECT, # Player selects which dice to use.
+	ROLL, # The action of rolling the dice.
+	SPLIT_OR_COMBINE, # Decide whether to split or combine dice results.
+	CALC_CHARGE, # Calculate the charge based on dice outcomes.
+	CALC_OVERCLOCK, # Calculate the overclock value.
+	CALC_SCRAP, # Calculate the scrap collected.
+	CALC_MODIFIER, # Apply any modifiers to the calculations.
+	CHUNK_SELECT, # Selecting chunks of resources or targets.
+	TOTAL, # Summarize total gains/losses for the turn or action.
+	DESTROY, # Handle the destruction of chunks or entities.
+	LOOP, # Reset the state for a new round or action.
+	INVENTORY, # Managing inventory or equipment.
+	SETTINGS, # Adjusting game settings or preferences.
+	PAUSE, # Game is paused.
+	VICTORY, # Condition for winning the game.
+	LOSS, # Condition for losing the game.
+	END # Concluding the game session.
+}
+
+var current_state = null
+
+signal state_changed(new_state)
+
+signal dice_selection_changed(selected_count)
+
+func set_state(new_state):
+	current_state = new_state
+	emit_signal("state_changed", new_state)
+
 # Dice setup: Two dice, each with three sides.
-var dice = [
-	{'sides': [1, 2, 3], 'current_roll': "3"},
-	{'sides': [1, 2, 3], 'current_roll': "3"}
-]
+var dice = {
+	1: {'sides': [1, 2, 3], 'current_roll': "3", 'is_selected': false},
+	2: {'sides': [1, 2, 3], 'current_roll': "2", 'is_selected': false},
+	3: {'sides': [1, 2, 3], 'current_roll': "3", 'is_selected': false},
+	4: {'sides': [1, 2, 3], 'current_roll': "1", 'is_selected': false},
+	5: {'sides': [1, 2, 3], 'current_roll': "3", 'is_selected': false},
+}
+
+var num_selected_dice = 0:
+	get:
+		return num_selected_dice
+	set(value):
+		emit_signal("dice_selection_changed", value)
+		num_selected_dice = value
 
 # Comet setup: Start with three chunks of different masses.
 var comet = {
@@ -44,39 +89,4 @@ var abilities = [
 ]
 
 
-enum States {
-	INIT, # Initialization before the game starts, loading resources, setting up the game world.
-	START, # The beginning of the game after initialization.
-	DICE_SELECT, # Player selects which dice to use.
-	ROLL, # The action of rolling the dice.
-	SPLIT_OR_COMBINE, # Decide whether to split or combine dice results.
-	CALC_CHARGE, # Calculate the charge based on dice outcomes.
-	CALC_OVERCLOCK, # Calculate the overclock value.
-	CALC_SCRAP, # Calculate the scrap collected.
-	CALC_MODIFIER, # Apply any modifiers to the calculations.
-	CHUNK_SELECT, # Selecting chunks of resources or targets.
-	TOTAL, # Summarize total gains/losses for the turn or action.
-	DESTROY, # Handle the destruction of chunks or entities.
-	RESET, # Reset the state for a new round or action.
-	INVENTORY, # Managing inventory or equipment.
-	SETTINGS, # Adjusting game settings or preferences.
-	PAUSE, # Game is paused.
-	VICTORY, # Condition for winning the game.
-	LOSS, # Condition for losing the game.
-	END # Concluding the game session.
-}
 
-var current_state = States.ROLL
-
-func _ready():
-	randomize()  # Ensure random results are different each run
-
-func roll_dice():
-	for die in dice:
-		die.current_roll = die.sides[randi() % die.sides.size()]
-	# Emit signal or call function to update game state based on dice roll.
-
-func reset_dice():
-	for die in dice:
-		die.current_roll = null
-	# Additional reset logic as needed.
