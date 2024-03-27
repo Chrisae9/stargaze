@@ -4,8 +4,3 @@ res://Die.tscn
 res://Comet.tscn
 res://DiceHolder.tscn
 res://Ability.tscn
-res://GameState.gd
-res://Loop.gd
-res://ActionHolder.gd
-res://SlotHolder.gd
-res://Slot.gd
