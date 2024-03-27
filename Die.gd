@@ -4,18 +4,17 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Button.connect("pressed", Callable(self, "_on_select"))
-	GameState.connect("state_changed", Callable(self, "_on_state_changed"))
+	GameState.connect("dice_changed", Callable(self, "update_dice"))
 
 func _on_select():
 	var id = get_meta("id")
+	var die = GameState.get_dice()[id]
 	
-	GameState.dice[id].is_selected = !GameState.dice[id].is_selected
+	GameState.set_die_property(id, "is_selected", !die.is_selected)
 
-	$ColorRect.color = Color.YELLOW if GameState.dice[id].is_selected else Color.WHITE
-	GameState.num_selected_dice += 1 if GameState.dice[id].is_selected else -1
-			
-	#print("Die ", die_id, " selection toggled to ", die.is_selected)
-
-
-func _on_state_changed(new_state):
-	pass
+func update_dice(id, _property, _value):
+	if get_meta("id") == id:
+		var die = GameState.get_dice()[id]
+		$Label.text = str(die.current_roll)
+		$Button.tooltip_text = ", ".join(die.sides)
+		$ColorRect.color = Color.YELLOW if die.is_selected else Color.WHITE

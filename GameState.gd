@@ -26,31 +26,78 @@ enum States {
 	END # Concluding the game session.
 }
 
-var current_state = null
+var current_state = null:
+	get:
+		return current_state
+	set(new_state):
+		emit_signal("state_changed", new_state)
+		current_state = new_state
 
 signal state_changed(new_state)
 
-signal dice_selection_changed(selected_count)
+# Define a signal that will be emitted when a die's property changes.
+signal dice_changed(die_id, property_name, new_value)
 
-func set_state(new_state):
-	current_state = new_state
-	emit_signal("state_changed", new_state)
+signal compute_dice(action, value)
 
-# Dice setup: Two dice, each with three sides.
-var dice = {
-	1: {'sides': [1, 2, 3], 'current_roll': "3", 'is_selected': false},
-	2: {'sides': [1, 2, 3], 'current_roll': "2", 'is_selected': false},
-	3: {'sides': [1, 2, 3], 'current_roll': "3", 'is_selected': false},
-	4: {'sides': [1, 2, 3], 'current_roll': "1", 'is_selected': false},
-	5: {'sides': [1, 2, 3], 'current_roll': "3", 'is_selected': false},
+
+var total_rolls = 3
+
+signal roll_used(rolls_left)
+
+var rolls = total_rolls:
+	get:
+		return rolls
+	set(rolls_left):
+		emit_signal("roll_used", rolls_left)
+		rolls=rolls_left
+
+
+
+# Private storage for dice.
+var _dice = {
+	1: {'sides': [1, 2, 3], 'current_roll': 3, 'is_selected': false},
+	2: {'sides': [1, 2, 3], 'current_roll': 2, 'is_selected': false},
 }
 
-var num_selected_dice = 0:
-	get:
-		return num_selected_dice
-	set(value):
-		emit_signal("dice_selection_changed", value)
-		num_selected_dice = value
+func get_dice_split() -> Array:
+	var selected_rolls = []
+	for id in _dice:
+		if _dice[id].is_selected:
+			selected_rolls.append(_dice[id].current_roll)
+	emit_signal("compute_dice", "split", selected_rolls)
+	return selected_rolls
+
+
+func get_dice_combine():
+	var total_roll = 0
+	for id in _dice:
+		if _dice[id].is_selected:
+			total_roll += _dice[id].current_roll
+	emit_signal("compute_dice", "combine", total_roll)
+	return total_roll
+
+
+# Public method to access dice dictionary. Acts as a getter.
+func get_dice() -> Dictionary:
+	return _dice
+
+# Method to update properties of a die by its id.
+# This method allows updating individual properties and emits the `dice_changed` signal.
+func set_die_property(die_id: int, property: String, value) -> void:
+	if _dice.has(die_id) and _dice[die_id].has(property):
+		_dice[die_id][property] = value
+		emit_signal("dice_changed", die_id, property, value)
+	else:
+		print("Die ID or property name is invalid.")
+		
+
+func get_num_selected_dice() -> int:
+	var count = 0
+	for die in _dice.values():
+		if die['is_selected']:
+			count += 1
+	return count
 
 # Comet setup: Start with three chunks of different masses.
 var comet = {

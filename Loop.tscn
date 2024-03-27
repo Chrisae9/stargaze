@@ -31,7 +31,6 @@ offset_left = 100.0
 offset_top = 200.0
 offset_right = 600.0
 offset_bottom = 500.0
-tooltip_text = "test"
 columns = 10
 script = ExtResource("3_o75si")
 
@@ -88,13 +87,21 @@ custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 text = "Combine"
 
-[node name="Seed" type="Label" parent="."]
+[node name="DebugInfo" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -76.0
-offset_bottom = 23.0
+offset_left = -78.0
+offset_bottom = 50.0
 grow_horizontal = 0
+
+[node name="Seed" type="Label" parent="DebugInfo"]
+layout_mode = 2
 text = "Seed: null"
-horizontal_alignment = 1
+horizontal_alignment = 2
+
+[node name="State" type="Label" parent="DebugInfo"]
+layout_mode = 2
+text = "State: null"
+horizontal_alignment = 2
