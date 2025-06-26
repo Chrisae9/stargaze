@@ -1,0 +1,10 @@
+{
+  "github.copilot.chat.agent.terminal.allowList": [
+    "nvm",
+    "nvm use && npm run test -- --reporter verbose",
+    "nvm use && npm run dev",
+    "nvm use && npx vitest --clearCache",
+    "npm run test -- --reporter verbose",
+    "npm run dev"
+  ]
+}

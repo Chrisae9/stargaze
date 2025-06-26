@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stargaze Game</title>
+    <!-- Google Fonts: Orbitron (sci-fi) and Roboto (clean) -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      html, body {
+        background: #181a20;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Roboto', 'Orbitron', Arial, sans-serif;
+      }
+      #game-root {
+        width: 800px;
+        height: 600px;
+        margin: 40px auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game-root"></div>
+    <script type="module" src="/src/game/main.ts"></script>
+  </body>
+</html>
